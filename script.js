@@ -16,7 +16,14 @@ var circle = new Konva.Circle({
   x: 100,
   y: 100,
   //by default x and y are 0 (x and y are position coordinates of the center)
-  fill: 'red'
+  fill: 'red',      //any color name or hex code
+  stroke: 'black', //border color
+  strokeWidth: 4, //border width
+  shadowOffset: { x: 10, y: 10 },
+  shadowBlur: 10,
+  shadowColor: 'grey',
+  opacity: 0.8,
+  shadowOpacity: 0.6,
 })
 
 
