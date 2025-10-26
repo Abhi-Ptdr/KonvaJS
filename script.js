@@ -24,6 +24,7 @@ var circle = new Konva.Circle({
   shadowColor: 'grey',
   opacity: 0.8,
   shadowOpacity: 0.6,
+  draggable: true, //to enable drag and drop
 })
 
 
@@ -36,13 +37,15 @@ stage.add(layer);
 
 //Events - Click, Mouseover, Mouseout, Drag and Drop, scroll, dblclick etc.
 
-circle.on('mouseover', function () {
-  this.fill('green'); //change color on mouseover
+circle.on('mousedown', function () {
+  this.fill('green');
+  this.radius(80);
   layer.draw(); //redraw layer to show changes
 });
 
-circle.on('mouseout', function () {
-  this.fill('red');
+circle.on('mouseup', function () {
+    this.fill('red');
+    this.radius(70);
     layer.draw();
 });
 
