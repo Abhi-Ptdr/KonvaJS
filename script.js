@@ -32,3 +32,24 @@ layer.add(circle);
 
 // Add layer 1 to stage
 stage.add(layer);
+
+
+//Events - Click, Mouseover, Mouseout, Drag and Drop, scroll, dblclick etc.
+
+circle.on('mouseover', function () {
+  this.fill('green'); //change color on mouseover
+  layer.draw(); //redraw layer to show changes
+});
+
+circle.on('mouseout', function () {
+  this.fill('red');
+    layer.draw();
+});
+
+circle.on('click', function () {
+  this.radius(this.radius() + 10);
+  this.x(this.x() + 50);
+  this.y(this.y() + 50);
+  this.shadowOffset({ x: 5, y: 5 });
+  layer.draw();
+});
