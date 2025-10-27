@@ -35,7 +35,7 @@ layer.add(circle);
 stage.add(layer);
 
 
-//Events - Click, Mouseover, Mouseout, Drag and Drop, scroll, dblclick etc.
+//Events - Click, Mouseover, Mouseout, Drag and Drop, scroll, dblclick, wheel(scrolling event) etc.
 
 circle.on('mousedown', function () {
   this.fill('green');
@@ -56,3 +56,15 @@ circle.on('click', function () {
   this.shadowOffset({ x: 5, y: 5 });
   layer.draw();
 });
+
+circle.on('dragstart', function () {
+  console.log('Move anywhere in the canvas');
+})
+
+circle.on('dragmove', function () {
+  console.log('Dragging at x: ' + this.x() + ', y: ' + this.y());
+})
+
+circle.on('dragend', function () {
+  console.log('Current position is x: ' + this.x() + ', y: ' + this.y());
+})
